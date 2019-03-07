@@ -1,0 +1,28 @@
+<!--index.wxml-->
+<view class="container">
+    <!-- <swiper indicator-dots="{{true}}" autoplay="{{true}}" style='height:{{imgH}}rpx;'>
+    <block wx:for="{{imgUrls}}" wx:key='{{item}}'>
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" style='width:{{imgW}}rpx;height:{{imgH}}rpx;' />
+      </swiper-item>
+    </block>
+  </swiper>   -->
+  <!-- <view class='ui-tab'>
+    <view class='ui-tab-item ui-tab-item-active'>婴儿游泳服务</view>
+    <view class='ui-tab-item'>优惠的服务</view>
+  </view> -->
+  <view class='product-list'>
+    <block wx:for='{{rows}}' wx:key='{{item.course}}'>
+      <view class='product-list-item ui-flex' data-course='{{item}}' bindtap='toDetail'>
+        <view class='item-pic'>
+          <image style='width:25vw;height:25vw;margin-right:5vw;border-radius:10rpx;' src='{{item.icon}}'></image>
+        </view>
+        <view class='ui-flex-item item-desc'>
+          <view class='t-md'>{{item.course_name}}-{{item.classroom_name}}</view>
+          <view class='t-sm'>老师：{{item.teachers}}</view>
+          <view class='t-sm'>预约成功：{{item.yy_cnt}}人次</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

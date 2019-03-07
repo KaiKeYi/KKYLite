@@ -1,0 +1,27 @@
+/* pages/login.wxss */
+
+.login-header {
+  padding: 50rpx;
+  font-size: 40rpx;
+  padding-bottom: 0;
+}
+
+.btn-submit {
+  border-color: #00b6fc;
+  background: #00b6fc;
+  color: #fff;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-radius: 100rpx;
+  width: 70vw;
+}
+
+.ui-input {
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.ui-input-icon{
+  margin-right:20rpx;
+  vertical-align:middle;
+}

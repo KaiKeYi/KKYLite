@@ -1,0 +1,90 @@
+<!--pages/product/detail.wxml-->
+<view class='product-list'>
+  <view class='product-list-item'>
+    <view class='ui-flex item-content'>
+      <view class='item-pic'>
+        <image style='width:25vw;height:25vw;margin-right:5vw;' src='{{courseInfo.icon}}'></image>
+      </view>
+      <view class='ui-flex-item item-desc'>
+        <view class='t-md'>{{courseInfo.course_name}}-{{courseInfo.classroom_name}}</view>
+        <view class='t-sm'>老师：{{courseInfo.teachers}}</view>
+        <view class='t-sm'>预约成功：{{courseInfo.yy_cnt}}人次</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='t-center'>
+  <view>预约时间</view>
+  <view class='t-xs mt-10 t-gray'>仅显示{{days.length}}天内的预约信息</view>
+</view>
+<view class='product-list'>
+  <view class='product-list-item'>
+    <view class='item-content t-center day-list'>
+      <view wx:for='{{days}}' wx:for-index="idx" wx:key="{{item.index}}" data-item="{{item}}" data-index="{{idx}}" bindtap='doChangeDate' class='day-list-item ui-flex-item date-item {{dayIndex==idx?"date-item-active":""}}'>
+        <view class='t-sm'>{{item.week_name}}</view>
+        <view class='t-xs'>{{item.date_name}}</view>
+      </view>
+    </view>
+    <view class='item-content' style='border-top:1rpx dashed #eee'>
+      <view class='select-times'>
+        <block wx:for='{{times}}' wx:key="{{item}}">
+          <view class='select-times-item btn t-sm {{item.teacher.name?"btn-green":""}}' bindtap='doSelectTeacher' data-item="{{item}}" plain disabled='{{!item.can_order}}'>
+            {{item.time_start}} {{item.can_order?(item.teacher.name||"请选择"):"已满"}}
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='b-bar'>
+  <view class='t-center' style='overflow:hidden;'>
+
+    <view class='btn-submit' bindtap='doSubmit'>立即预约</view>
+
+    <view class='btn-reset' bindtap='doReset'>清空</view>
+
+  </view>
+</view>
+
+
+<view class='select-mark' id='mark' bindtap='tapMark' wx:if='{{teachers.length>0}}'>
+  <view class='select-box'>
+    <view class='select-box-hd'>
+      <view class='select-box-hd-left'></view>
+      <text>教师选择</text>
+      <view class='select-box-hd-right'></view>
+    </view>
+    <view class='select-box-bd'>
+      <view wx:for="{{teachers}}" wx:key='{{item.tid}}' class='select-item btn t-sm {{item.teacher.name?"btn-green":""}}' bindtap='doSelectItem' data-item="{{item}}" plain>{{item.name}}</view>
+    <!-- <button size="mini" class='select-item' wx:for="{{teachers}}" wx:key='{{item.tid}}' bindtap='doSelectItem' plain data-item="{{item}}" >{{item.name}}</button> -->
+    </view>
+    <!-- <picker-view class='select-box-bd' indicator-style="height: 40px;" bindchange="bindChange">
+      <picker-view-column>
+        <view wx:for="{{teachers}}" wx:key='{{item.tid}}' class='t-center' style="line-height: 40px;">{{item.name}}</view>
+      </picker-view-column>
+    </picker-view>
+    <view class='select-box-ft'>
+      <button bindtap='doSelect'>确定</button>
+    </view> -->
+  </view>
+</view>
+
+<!-- 
+<view class='select-mark' id='mark' bindtap='tapMark' wx:if='{{teachers.length>0}}'>
+  <view class='select-box'>
+    <view class='select-box-hd'>
+      <view class='select-box-hd-left'></view>
+      <text>教师选择</text>
+      <view class='select-box-hd-right'></view>
+    </view>
+    <picker-view class='select-box-bd' indicator-style="height: 40px;" bindchange="bindChange">
+      <picker-view-column>
+        <view wx:for="{{teachers}}" wx:key='{{item.tid}}' class='t-center' style="line-height: 40px;">{{item.name}}</view>
+      </picker-view-column>
+    </picker-view>
+    <view class='select-box-ft'>
+      <button bindtap='doSelect'>确定</button>
+    </view>
+  </view>
+</view> -->

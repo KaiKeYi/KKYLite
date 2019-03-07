@@ -1,0 +1,39 @@
+<!--pages/login.wxml-->
+<view class='login-header'>
+  <view class='ui-flex'>
+    <view class='ui-flex-item t-right'>
+      <image style='width:15vw;height:15vw;margin-right:30rpx;' src="/assets/images/d-usr.png"></image>
+    </view>
+    <view class='ui-flex-item'>
+      <view>欢迎登录!</view>
+      <view class='t-xs t-gray mt-20'>登录后进行预约游泳</view>
+    </view>
+  </view>
+</view>
+<form class='ui-form' bindsubmit="formSubmit" bindreset="formReset">
+  <view class='ui-form-item'>
+    <view class="ui-input">
+      <image class='ui-input-icon' style='width:30rpx;height:40rpx;' src='/assets/images/login-phone.png'></image>
+      <input type='number' name='mobile' focus value='{{params.mobile}}' placeholder='请输入手机号码'></input>
+    </view>
+  </view>
+  <view class='ui-form-item'>
+    <view class="ui-input">
+      <image class='ui-input-icon' style='width:36rpx;height:40rpx' src='/assets/images/login-code.png'></image>
+      <input type='password' name='password' value='{{params.password}}' placeholder='请输入密码'></input>
+    </view>
+  </view>
+  <view class='ui-form-item'>
+    <view class="ui-input">
+      <picker name='dealerno' bindchange="bindDealerChange" range-key="shopname" value="{{params.dealerno}}" range="{{dealers}}">
+        <view class="picker ui-flex">
+          <view>选择门店:</view>
+          <view class='ui-flex-item t-right'>{{dealers[index].shopname||'请选择'}}</view>
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class='ui-form-item'>
+    <button class='btn-submit' form-type='submit'>登录</button>
+  </view>
+</form>

@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/logs/logs",
+    "pages/account/index",
+    "pages/orders/index",
+    "pages/product/detail",
+    "pages/login"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "开课易婴幼儿游泳",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor":"#666666",
+    "backgroundColor":"#ffffff",
+    "borderStyle":"white",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "text": "预约",
+        "iconPath":"/assets/images/tab1-1.png",
+        "selectedIconPath":"/assets/images/tab1.png"
+      },
+      {
+        "pagePath": "pages/orders/index",
+        "text": "订单",
+        "iconPath": "/assets/images/tab2-1.png",
+        "selectedIconPath": "/assets/images/tab2.png"
+      },
+      {
+        "pagePath": "pages/account/index",
+        "text": "我的",
+        "iconPath": "/assets/images/tab3-1.png",
+        "selectedIconPath": "/assets/images/tab3.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+.product-list {
+  padding: 20rpx;
+}
+
+.product-list-item {
+  background: #fff;
+  border-radius: 12rpx;
+  margin-bottom:20rpx;
+  padding:20rpx;
+}
+
+.item-pic{}
+.item-desc{
+  line-height:60rpx;
+}
+
+
+
+.ui-tab {
+  display: flex;
+  background: #fff;
+  height: 5vh;
+  line-height: 5vh;
+  font-size: 30rpx;
+  padding: 1vh;
+}
+
+.ui-tab-item {
+  flex: 1;
+  text-align: center;
+  /* border-bottom:4rpx solid #30B8FD; */
+}
+
+.ui-tab-item-active {
+  color: #30b8fd;
+}
+
+.ui-tab-item:first-child {
+  border-right: 1rpx solid #ddd;
+}

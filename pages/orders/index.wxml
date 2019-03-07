@@ -1,0 +1,22 @@
+<!--pages/orders/index.wxml-->
+<view wx:if='{{rows.length<=0}}'>
+  <image style='display:block;height:100vh;width:70vw;margin:0 auto;' mode="aspectFit" src='/assets/images/null-page-draw.png'></image>
+</view>
+<view class='product-list'>
+  <view class='product-list-item' wx:for='{{rows}}' wx:key='{{item}}'>
+    <view class='ui-flex item-content'>
+      <view class='item-pic'>
+        <image style='width:25vw;height:25vw;margin-right:5vw;' src='{{item.icon}}'></image>
+      </view>
+      <view class='ui-flex-item item-desc'>
+        <view class='t-md'>{{item.course_name}}-{{item.classroom_name}}</view>
+        <view class='t-sm'>老师：{{item.teacher}}</view>
+        <!-- <view class='t-sm'>预约成功：188人次</view> -->
+      </view>
+    </view>
+    <view class='ui-flex {{status[item.status]}} item-footer'>
+      <view>{{item.day_name}} {{item.week}} {{item.time_start}}</view>
+      <view class='ui-flex-item t-right'>{{item.status}}</view>
+    </view>
+  </view>
+</view>

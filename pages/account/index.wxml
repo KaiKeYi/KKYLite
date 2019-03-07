@@ -1,0 +1,38 @@
+<!--pages/account/index.wxml-->
+<view class='page-padd'>
+  <view class='t-center'>
+    <image class='avatar' src='/assets/images/d-usr2.png'></image>
+    <view class='mt-30'>{{acc.nickname||acc.bbname}}-{{acc.mobile}}</view>
+    <view class='t-xs t-gray mt-30'>生日：{{acc.birthday}} 性别：{{acc.sex}} 所在小区：{{acc.dizhi}}</view>
+  </view>
+  <view style="margin-top:50rpx;">
+    <view class="list-block">
+      <!-- <view class="list-content">
+        <view class="list-content-label">卡次数:</view>
+        <view class="list-content-body">
+          4次</view>
+      </view>
+      <view class="list-content">
+        <view class="list-content-label">积分:</view>
+        <view class="list-content-body">122个</view>
+      </view> -->
+      <view class="list-content">
+        <view class="list-content-label">服务门店:</view>
+        <view class="list-content-body">
+          {{acc.shopname}}
+          <view class='t-xs t-gray'>{{acc.shopaddress||""}}</view>
+        </view>
+      </view>
+      <view hidden='{{!acc.shopphone}}' class="list-content">
+        <view class="list-content-label">门店电话:</view>
+        <view class="list-content-body" data-number='{{acc.shopphone}}' bindtap='doCall'>
+        <image class='v-center' style='width:40rpx;height:40rpx;' src='/assets/images/phone.png'></image>
+        {{acc.shopphone}}
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='t-center' style='margin-top:80rpx;'>
+    <view style='width:60vw;' bindtap='doLogout' class='ui-btn ui-btn-big ui-btn-round'>退出登录</view>
+  </view>
+</view>

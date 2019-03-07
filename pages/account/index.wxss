@@ -1,0 +1,13 @@
+/* pages/account/index.wxss */
+
+.avatar {
+  width: 140rpx;
+  height: 140rpx;
+  border: 1rpx solid #ccc;
+  background-color: #fff;
+  border-radius: 140rpx;
+}
+
+.list-content-body{
+  text-align: right;
+}
